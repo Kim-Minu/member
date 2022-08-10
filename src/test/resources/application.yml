@@ -1,0 +1,26 @@
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  datasource:
+    driverClassName: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://database-2.coruf4b6jtbm.ap-northeast-2.rds.amazonaws.com:3306/mydb
+    username: admin
+    password: alsdn5121
+
+  jpa:
+    generate-ddl: true
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        dialect: org.hibernate.dialect.MariaDB103Dialect
+    hibernate:
+      ddl-auto: update
+jwt:
+  token-validity-in-seconds: 7776000000 #90일
+  secretKey: json-web-token-secret-key-sign-with-member-api
+
+sms:
+  authExpireTime: 180000  #3분
+  authKeyLength: 6
